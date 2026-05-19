@@ -18,7 +18,7 @@ pipeline {
 
         stage('Run Docker Container') {
             steps {
-                bat 'docker run -d -p 9090:3000 quizverse'
+                bat 'docker run -d -p 9095:3000 quizverse'
             }
         }
     }
