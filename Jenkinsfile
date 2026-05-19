@@ -10,9 +10,15 @@ pipeline {
             }
         }
 
-        stage('Done') {
+        stage('Build Docker Image') {
             steps {
-                bat 'echo Build Successful'
+                bat 'docker build -t quizverse .'
+            }
+        }
+
+        stage('Run Docker Container') {
+            steps {
+                bat 'docker run -d -p 9091:3000 quizverse'
             }
         }
     }
