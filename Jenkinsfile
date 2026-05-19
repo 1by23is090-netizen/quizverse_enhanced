@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        nodejs 'nodejs'
+    }
+
     stages {
 
         stage('Clone Repository') {
@@ -12,13 +16,13 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
+                bat 'npm install'
             }
         }
 
         stage('Run Application') {
             steps {
-                sh 'npm start'
+                bat 'npm start'
             }
         }
     }
