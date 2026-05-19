@@ -12,13 +12,17 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                bat 'npm install'
+                dir('enhanced_quiz_system') {
+                    bat 'npm install'
+                }
             }
         }
 
         stage('Run Application') {
             steps {
-                bat 'npm start'
+                dir('enhanced_quiz_system') {
+                    bat 'npm start'
+                }
             }
         }
     }
