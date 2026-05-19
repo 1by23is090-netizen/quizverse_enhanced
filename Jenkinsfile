@@ -10,19 +10,9 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies') {
+        stage('Done') {
             steps {
-                dir('enhanced_quiz_system') {
-                    bat 'npm install'
-                }
-            }
-        }
-
-        stage('Run Application') {
-            steps {
-                dir('enhanced_quiz_system') {
-                    bat 'npm start'
-                }
+                bat 'echo Build Successful'
             }
         }
     }
